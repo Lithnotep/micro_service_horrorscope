@@ -13,6 +13,15 @@ class NeosService
     JSON.parse(response.body, symbolize_names: true)
   end
 
+  def birthday(start_date)
+    response = conn.get('neo/rest/v1/feed') do |req|
+      req.params['detailed'] = 'false'
+      req.params['start_date'] = start_date
+    end
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
+
   private
 
   def conn
