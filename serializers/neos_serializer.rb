@@ -20,4 +20,12 @@ class NeosSerializer
       orbital_data: response[:orbital_data]
     }
   end
+
+  def birthday(response)
+    {
+    
+    }
+  end
+
+
 end

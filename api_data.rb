@@ -10,15 +10,21 @@ class ApiData < Sinatra::Base
   end
 
 
-  get "/harbinger" do #unsure if there will be a parameter here
+  get "/harbinger/:asteroid_id" do
+    binding.pry#unsure if there will be a parameter here
     content_type :json
-    NeosSerializer.new.harbinger(NeosService.new.harbinger(asteroid_id)).to_json
+    NeosSerializer.new.harbinger(NeosService.new.harbinger(params[:asteroid_id])).to_json
   end
 
 
   get '/daily' do
     content_type :json
     NeosSerializer.new.daily(NeosService.new.current).to_json
+  end
+
+  get '/birthday' do
+    content_type :json
+    NeosSerializer.new.birthday(NeosService.new.birthday).to_json
   end
 
 end
