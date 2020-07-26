@@ -10,8 +10,9 @@ class ApiData < Sinatra::Base
   end
 
 
-  get "/harbinger/:id" do #unsure if there will be a parameter here
-    conn = Faraday.new(url: 'https://api.nasa.gov', params: {api_key: ENV['nasa_api_key']})
+  get "/harbinger" do #unsure if there will be a parameter here
+    content_type :json
+    NeosSerializer.new.harbinger(NeosService.new.harbinger(asteroid_id)).to_json
   end
 
 
