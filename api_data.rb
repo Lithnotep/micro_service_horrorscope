@@ -1,6 +1,7 @@
 require 'faraday'
 require 'sinatra'
-require "pry"
+require './serializers/neos_serializer'
+require 'pry'
 
 class ApiData < Sinatra::Base
 
@@ -8,6 +9,8 @@ class ApiData < Sinatra::Base
       "Hello"
   end
 
-
-
+  get '/daily' do
+    content_type :json
+    NeosSerializer.new.daily(NeosService.new.current).to_json
+  end
 end
