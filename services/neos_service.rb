@@ -6,6 +6,13 @@ class NeosService
     JSON.parse(response.body, symbolize_names: true)
   end
 
+  def harbinger(asteroid_id)
+    response = conn.get("neo/rest/v1/neo") do |req|
+      req.params['asteroid_id'] = asteroid_id
+    end
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
   private
 
   def conn
