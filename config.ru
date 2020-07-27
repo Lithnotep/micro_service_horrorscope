@@ -1,4 +1,4 @@
-require 'rubygems'
+
 require 'dotenv/load'
 require './api_data'
 require './services/neos_service'
