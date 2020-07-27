@@ -1,4 +1,4 @@
-require 'rubygems'
+
 require 'faraday'
 require 'sinatra'
 require './serializers/neos_serializer'
