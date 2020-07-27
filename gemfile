@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.3'
 gem 'faraday'
 gem 'pry'
-gem 'rake'
+gem 'rack'
 gem 'sinatra'
 
 group :development, :test do
