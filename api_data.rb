@@ -11,7 +11,7 @@ class ApiData < Sinatra::Base
   end
 
 
-  get "/harbinger/:asteroid_id"
+  get "/harbinger/:asteroid_id" do
     #unsure if there will be a parameter here
     content_type :json
     NeosSerializer.new.harbinger(NeosService.new.harbinger(params[:asteroid_id])).to_json
