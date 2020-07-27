@@ -23,7 +23,16 @@ class NeosSerializer
 
   def birthday(response)
     {
-    
+
+    }
+  end
+
+  def faker
+    {
+      id: "54048900",
+      name: "(2020 OO1)",
+      relative_velocity: "16270.0247798088",
+      lunar_distance: "1.7395081826"
     }
   end
 
