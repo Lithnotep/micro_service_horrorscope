@@ -1,5 +1,5 @@
 
-require 'dotenv/load'
+# require 'dotenv/load'
 require './api_data'
 require './services/neos_service'
 require 'bundler'
