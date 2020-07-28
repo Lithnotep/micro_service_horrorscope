@@ -24,8 +24,9 @@ class ApiData < Sinatra::Base
   end
 
   get '/birthday' do
+    birth_date = params[:birthday]
     content_type :json
-    NeosSerializer.new.birthday(NeosService.new.birthday).to_json
+    NeosSerializer.new.birthday(NeosService.new.birthday(birth_date)).to_json
   end
 
   get '/faker' do

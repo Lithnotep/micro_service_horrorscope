@@ -22,8 +22,9 @@ class NeosSerializer
   end
 
   def birthday(response)
+    closest = response[:near_earth_objects].max_by {|neo| neo[:close_approach_data].first}
     {
-
+      neo_id: closest[:id]
     }
   end
 
