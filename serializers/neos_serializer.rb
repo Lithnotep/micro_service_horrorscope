@@ -5,6 +5,7 @@ class NeosSerializer
       neos << {
         id: neo[:id],
         name: neo[:name],
+        event_date: neo[:close_approach_data][0][:close_approach_date],
         relative_velocity: neo[:close_approach_data][0][:relative_velocity][:miles_per_hour],
         lunar_distance: neo[:close_approach_data][0][:miss_distance][:lunar]
       }

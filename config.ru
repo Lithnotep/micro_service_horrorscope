@@ -1,4 +1,4 @@
-
+# require 'dotenv/load for local rackup, not required for deployment'
 # require 'dotenv/load'
 require './api_data'
 require './services/neos_service'
